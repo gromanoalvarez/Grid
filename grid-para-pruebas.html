@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* * {box-sizing: border-box;}
+ 
+.wrapper {
+  background-color: rgb(79,185,227);
+  padding: 10px;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        background-color: rgb(79, 185, 227);
+        padding: 10px;
+        max-width: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .item {
+        float: left;
+        border-radius: 5px;
+        background-color: rgb(207, 232, 220);
+        padding: 1em;
+        width: 33.333%;
+        /* el width lo saca 33.33% de 1/3 a no ser
+   que agregue el supports */
+      }
+
+      @supports (display: grid) {
+        .item {
+          width: auto;
+        }
+      }
+      /**La compatibilidad !!!
+
+
+            Escribir nuestro antiguo CSS primero,
+  fuera de cualquier consulta de características. 
+  Los navegadores que   no son compatibles con Grid y 
+  que no admiten la consulta de características 
+  utilizarán esa información de diseño que pueden 
+  entender e ignorarán por   completo todo lo demás.
+   Los navegadores que admiten la consulta de funciones
+   también admiten CSS Grid y, por lo tanto, ejecutarán
+    el código de cuadrícula    y el código dentro de la
+     consulta de funciones.
+ use el enfoque de hacer  el CSS anterior y luego sobrescribirlo,
+  para obtener el mejor soporte.*/
+
+      /*          prefijo  -ms- para Flexbox.
+ podría utilizar la -ms-gridversión para crear un método alternativo
+IE10 e IE11 admiten la especificación original con un -ms prefijo.
+problema con Internet Explorer 10, que utiliza el prefijo 
+            prefijo  -ms- para Flexbox.
+implementaciones de IE10 y IE11 tienen el prefijo -ms-, 
+Los puntos clave a tener en cuenta son los siguientes:
+No hay colocación automática. Debe colocar cada elemento en la 
+cuadrícula utilizando el posicionamiento basado en líneas.
+
+            El grid-template-areas 
+método ascii-art de posicionamiento no es
+ parte de la implementación.
+No hay propiedades de brecha de rejilla.
+En lugar de especificar las líneas de inicio y final, especifica
+ una línea de inicio y el número de pistas que abarca.
+
+
+           display: table-cell
+<<<vertical-align  funciona cuando usa display: table-cell.>>>>
+Lo mismo es cierto para inline-block. El valor inline-blockse 
+puede aplicar al elemento secundario,
+ pero tan pronto como el elemento principal tenga 
+ display:  grid (el comportamiento de bloqueo en línea, ya no se aplicará.
+A menudo uso CSS )
+display: table-cell cuando necesito crear un 
+diseño de columna y también alinear 
+elementos en navegadores no compatibles, ya que la 
+<<<vertical-align  funciona cuando usa display: table-cell.>>>>
+
+            grid-template-columns
+ Si un navegador que no es compatible con CSS Grid se encuentra 
+ con la grid-template-columns propiedad, no sabe qué es, por lo
+  que descarta esa línea y continúa.
+Esto significa que puede usar algunos CSS antiguos, por ejemplo,
+ flotantes o 
+ display: table-cell
+
+                float: left. 
+elementos a los que les hemos dado un porcentaje de ancho y
+luego los hemos establecido en float: left. 
+Esto hace que se alineen uno al lado del otro.
+
+                 probar navegadores más antiguos.
+   Una forma es usar una herramienta de prueba en línea como Sauce Labs,
+   https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing
+   https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
+   
+
+
+
+*/
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="item">Item One</div>
+      <div class="item">Item Two</div>
+      <div class="item">Item Three</div>
+    </div>
+  </body>
+</html>
